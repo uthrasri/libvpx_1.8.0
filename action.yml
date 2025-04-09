@@ -1,0 +1,21 @@
+name: Whitesource Security Scan Example
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run Whitesource Action
+      uses: mercari/Whitesource-Scan-Action@v1.0.0
+      with:
+        wssUrl: https://app-eu.whitesourcesoftware.com/agent
+        apiKey: ${{ secrets.WSS_API_KEY }}
+        productName: 'Microservices'
+        projectName: 'My-Example-Microservice'
