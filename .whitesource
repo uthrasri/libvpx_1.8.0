@@ -1,0 +1,10 @@
+{
+  "scanSettings": {
+    "enableIaC": true,
+    "baseBranches": ["main"]
+  },
+  "checkRunSettings": {
+    "useMendCheckNames": true,
+    "iacCheckRunConclusionLevel": "failure"
+  }
+}
